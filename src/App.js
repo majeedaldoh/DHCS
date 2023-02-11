@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { useState, useEffect, useMemo } from "react";
-=======
 import { useEffect, useMemo, useState } from "react";
->>>>>>> main
 
 // react-router components
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
@@ -32,7 +28,6 @@ import createCache from "@emotion/cache";
 import { CacheProvider } from "@emotion/react";
 import rtlPlugin from "stylis-plugin-rtl";
 
-// Material Dashboard 2 React routes
 import routes from "routes";
 
 // Material Dashboard 2 React contexts
