@@ -1,14 +1,12 @@
- 
-
 // Material Dashboard 2 React base styles
-import colors from "assets/theme/base/colors";
 import borders from "assets/theme/base/borders";
 import boxShadows from "assets/theme/base/boxShadows";
+import colors from "assets/theme/base/colors";
 
 // Material Dashboard 2 React helper functions
 // import rgba from "assets/theme/functions/rgba";
-import pxToRem from "assets/theme/functions/pxToRem";
 import linearGradient from "assets/theme/functions/linearGradient";
+import pxToRem from "assets/theme/functions/pxToRem";
 
 const { white, gradients, grey, transparent } = colors;
 const { borderWidth } = borders;
