@@ -50,6 +50,12 @@ function reducer(state, action) {
     case "ROLE": {
       return { ...state, role: action.value };
     }
+    case "ADDRESS": {
+      return { ...state, walletAddress: action.value };
+    }
+    case "FUNCTIONS": {
+      return { ...state, contractFunctions: action.value };
+    }
     default: {
       throw new Error(`Unhandled action type: ${action.type}`);
     }
@@ -70,6 +76,8 @@ function MaterialUIControllerProvider({ children }) {
     layout: "dashboard",
     darkMode: false,
     role: 1,
+    walletAddress: localStorage.getItem("defaultAccount"),
+    contractFunctions: null,
   };
 
   const [controller, dispatch] = useReducer(reducer, initialState);
@@ -109,6 +117,8 @@ const setDirection = (dispatch, value) => dispatch({ type: "DIRECTION", value })
 const setLayout = (dispatch, value) => dispatch({ type: "LAYOUT", value });
 const setDarkMode = (dispatch, value) => dispatch({ type: "DARKMODE", value });
 const setRole = (dispatch, value) => dispatch({ type: "ROLE", value });
+const setWalletAddress = (dispatch, value) => dispatch({ type: "ADDRESS", value });
+const setContractFunctions = (dispatch, value) => dispatch({ type: "FUNCTIONS", value });
 
 export {
   MaterialUIControllerProvider,
@@ -124,4 +134,6 @@ export {
   setLayout,
   setDarkMode,
   setRole,
+  setWalletAddress,
+  setContractFunctions,
 };

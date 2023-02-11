@@ -1,4 +1,7 @@
-import { useEffect } from "react";
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 // react-router-dom components
 import { NavLink, useLocation } from "react-router-dom";
@@ -31,9 +34,79 @@ import {
   setWhiteSidenav,
   useMaterialUIController,
 } from "context";
+// eslint-disable-next-line camelcase
+import Deapp_abi from "../../layouts/authentication/sign-in";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
+  const { walletAddress } = controller;
+  const contractAddress = "0x453cAC3F1BD0165BC67ab39c8561755E7B9335D9";
+
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
+  const [connButtonText, setConnButtonText] = useState("Connect Wallet");
+
+  const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState(null);
+  const [contract, setContract] = useState(null);
+  const connectWalletHandler = () => {
+    if (window.ethereum && window.ethereum.isMetaMask) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((result) => {
+          accountChangedHandler(result[0]);
+          setConnButtonText("Wallet Connected");
+        })
+        .catch((error) => {
+          setErrorMessage(error.message);
+        });
+    } else {
+      // eslint-disable-next-line no-alert, no-console
+      console.log("Need to install MetaMask");
+      setErrorMessage("Please install MetaMask browser extension to interact");
+    }
+  };
+  const clearStorage = () => {
+    // console.log(contract.functions);
+    localStorage.clear();
+    window.location.reload();
+  };
+  const [StudentInfo, getStudentInfo] = useState(null);
+
+  const getAllStudentInfo = async () => {
+    const val = await contract.addCountry(
+      "Saudi Arabia",
+      "0x2327ec996451DD12AA7d4F06a589566a593ea994"
+    );
+    console.log(val);
+    alert(val.hash);
+    getStudentInfo(val.hash);
+  };
+
+  const log = () => {
+    console.log(window.ethereum);
+    console.log(contract.functions);
+  };
+  const updateEthers = () => {
+    const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
+    setProvider(tempProvider);
+    const tempSigner = tempProvider.getSigner();
+    setSigner(tempSigner);
+    const tempContract = new ethers.Contract(contractAddress, Deapp_abi, tempSigner);
+    setContract(tempContract);
+  };
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    const sessionExpires = new Date();
+    sessionExpires.setDate(sessionExpires.getDate() + 7);
+    localStorage.setItem("defaultAccount", newAccount);
+    localStorage.setItem("isSessionActive", true);
+    localStorage.setItem("sessionExpires", sessionExpires);
+    console.log("saad here");
+    updateEthers();
+    // setWalletAddress(dispatch, newAccount);
+    // setContractFunctions(dispatch, contract.functions);
+  };
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
   const location = useLocation();
   const collapseName = location.pathname.replace("/", "");
@@ -167,14 +240,26 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       <MDBox p={2} mt="auto">
         <MDButton
           component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
           target="_blank"
           rel="noreferrer"
           variant="gradient"
           color={sidenavColor}
           fullWidth
+          onClick={connectWalletHandler}
         >
-          upgrade to pro
+          {walletAddress == null ? "saad" : defaultAccount} {connButtonText}
+          {errorMessage == null ? "" : "saad"}
+        </MDButton>
+        <MDButton
+          component="a"
+          target="_blank"
+          rel="noreferrer"
+          variant="gradient"
+          color={sidenavColor}
+          fullWidth
+          onClick={getAllStudentInfo}
+        >
+          saad
         </MDButton>
       </MDBox>
     </SidenavRoot>
