@@ -1,5 +1,3 @@
- 
-
 // @mui material components
 import Card from "@mui/material/Card";
 // import Divider from "@mui/material/Divider";
@@ -11,7 +9,7 @@ import MDTypography from "components/MDTypography";
 // import MDButton from "components/MDButton";
 
 // Billing page components
-import Transaction from "layouts/billing/components/Transaction";
+import Transaction from "layouts/issuers/components/Transaction";
 
 function Transactions() {
   return (

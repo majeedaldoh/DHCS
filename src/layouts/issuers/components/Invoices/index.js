@@ -1,5 +1,3 @@
- 
-
 // @mui material components
 import Card from "@mui/material/Card";
 
@@ -9,7 +7,7 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 // Billing page components
-import Invoice from "layouts/billing/components/Invoice";
+import Invoice from "layouts/issuers/components/Invoice";
 
 function Invoices() {
   return (
