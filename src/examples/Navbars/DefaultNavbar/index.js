@@ -9,7 +9,7 @@ import PropTypes from "prop-types";
 // @mui material components
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
-
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -101,12 +101,31 @@ function DefaultNavbar({ transparent, light, action }) {
         <MDBox color="inherit" display={{ xs: "none", lg: "flex" }} m={0} p={0}>
           <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" light={light} />
           <DefaultNavbarLink icon="person" name="profile" route="/profile" light={light} />
-          <DefaultNavbarLink
-            icon="account_circle"
-            name="Scan"
-            route="/authentication/sign-up"
-            light={light}
-          />
+          <MDBox
+            component={Link}
+            to="/authentication/sign-up"
+            mx={1}
+            p={1}
+            display="flex"
+            alignItems="center"
+            sx={{ cursor: "pointer", userSelect: "none" }}
+          >
+            <QrCodeScannerIcon
+              sx={{
+                color: ({ palette: { white, secondary } }) => (light ? white.main : secondary.main),
+                verticalAlign: "middle",
+              }}
+            />
+            <MDTypography
+              variant="button"
+              fontWeight="regular"
+              color={light ? "white" : "dark"}
+              textTransform="capitalize"
+              sx={{ width: "100%", lineHeight: 0 }}
+            >
+              Scan
+            </MDTypography>
+          </MDBox>
           <DefaultNavbarLink
             icon="key"
             name="sign in"
