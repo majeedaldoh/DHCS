@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+/* eslint-disable react/no-unused-prop-types */
+import { useEffect, useState } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -7,9 +8,9 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 // @mui material components
+import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
-import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
@@ -25,7 +26,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 // Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
 
-function DefaultNavbar({ transparent, light, action }) {
+function DefaultNavbar({ transparent, light }) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
