@@ -1,5 +1,6 @@
 // react-router-dom components
 // import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -22,41 +23,38 @@ import MDBox from "components/MDBox";
 
 function Cover() {
   // const ScanComponent = () => {
-  //   const navigate = useNavigate();
-  //   const [data, setData] = useState("");
-  //     const handleScan = async (scanData) => {
-  //       console.log(`loaded data data`, scanData);
-  //       if (scanData && scanData !== "") {
-  //         console.log(`loaded >>>`, scanData);
-  //         setData(scanData);
-  //       }
-  //     };
-  //     const handleError = (err) => {
-  //       console.error(err);
-  //     };
+  const [data, setData] = useState("");
+  const handleScan = async (scanData) => {
+    console.log(`loaded data data`, scanData);
+    if (scanData && scanData !== "") {
+      console.log(`loaded >>>`, scanData);
+      setData(scanData);
+    }
+  };
+  const handleError = (err) => {
+    console.error(err);
+  };
   return (
-    <CoverLayout image={bgImage}>
-      <MDBox
-        variant="#59D2BE"
-        bgColor="#59D2BE"
-        borderRadius="lg"
-        coloredShadow="info"
-        p={2}
-        textAlign="center"
-      >
-        <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-          Scan The Qr Code
-        </MDTypography>
-        <Card>
-          <QrReader
-            delay={10000}
-            // onError={handleError}
-            // onScan={handleScan}
-            // style={{ width: "400px" }}
-          />
-        </Card>
-      </MDBox>
-    </CoverLayout>
+    <div>
+      <CoverLayout image={bgImage}>
+        <MDBox
+          variant="#59D2BE"
+          bgColor="#59D2BE"
+          borderRadius="lg"
+          coloredShadow="info"
+          p={2}
+          textAlign="center"
+        >
+          <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
+            Scan The Qr Code
+          </MDTypography>
+          <Card>
+            <QrReader delay={10000} onError={handleError} onScan={handleScan} />
+            {data !== "" && <p>{data.text}</p>}
+          </Card>
+        </MDBox>
+      </CoverLayout>
+    </div>
   );
 }
 
