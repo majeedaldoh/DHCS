@@ -1,22 +1,20 @@
- 
-
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
 // @mui material components
+import Icon from "@mui/material/Icon";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 
 // Custom styles for the SidenavCollapse
 import {
-  collapseItem,
-  collapseIconBox,
   collapseIcon,
+  collapseIconBox,
+  collapseItem,
   collapseText,
 } from "examples/Sidenav/styles/sidenavCollapse";
 

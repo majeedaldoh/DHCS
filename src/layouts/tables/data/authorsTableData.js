@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
- 
-
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 import MDBadge from "components/MDBadge";
+import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
