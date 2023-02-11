@@ -21,17 +21,19 @@
 */
 
 // Material Dashboard 2 React layouts
+import Agencies from "layouts/agencies";
+import CreateAgency from "layouts/authentication/CreateAgency";
+import CreateCertificates from "layouts/authentication/CreateCertificates";
+import CreateCountry from "layouts/authentication/CreateCountry";
 import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
-import Billing from "layouts/billing";
+import Certificates from "layouts/certificates";
+
 import Dashboard from "layouts/dashboard";
-import Tables from "layouts/tables";
-import Billing from "layouts/billing";
-import RTL from "layouts/rtl";
+import Issuers from "layouts/issuers";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import SignIn from "layouts/authentication/sign-in";
-import SignUp from "layouts/authentication/sign-up";
+import RTL from "layouts/rtl";
+import Tables from "layouts/tables";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -99,6 +101,24 @@ const routes = [
     route: "/create-Issuer",
     isAllowed: 1,
     component: <CreateAgency />,
+  },
+  {
+    type: "collapse",
+    name: "Manage Certificates",
+    key: "billing",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/Issuers",
+    isAllowed: 1,
+    component: <Certificates />,
+  },
+  {
+    type: "collapse",
+    name: "Create Certificate",
+    key: "createCountry",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/create-Issuer",
+    isAllowed: 1,
+    component: <CreateCertificates />,
   },
   {
     type: "collapse",

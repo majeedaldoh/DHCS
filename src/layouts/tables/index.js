@@ -1,17 +1,14 @@
 // @mui material components
 import Card from "@mui/material/Card";
-<<<<<<< HEAD
-import { useState } from "react";
-=======
 import Grid from "@mui/material/Grid";
->>>>>>> main
+import { useState } from "react";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MenuItem from "@mui/material/MenuItem";
 import Icon from "@mui/material/Icon";
 import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import MDBox from "components/MDBox";
+import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 React example components
 import Footer from "examples/Footer";
