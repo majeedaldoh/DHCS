@@ -1,5 +1,3 @@
- 
-
 import { useEffect } from "react";
 
 // @mui material components
@@ -9,23 +7,23 @@ import Grid from "@mui/material/Grid";
 import MDBox from "components/MDBox";
 
 // Material Dashboard 2 React example components
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
-import Footer from "examples/Footer";
+import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
+import Footer from "examples/Footer";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 // Data
 import reportsBarChartData from "layouts/rtl/data/reportsBarChartData";
 import reportsLineChartData from "layouts/rtl/data/reportsLineChartData";
 
 // RTL components
-import Projects from "layouts/rtl/components/Projects";
 import OrdersOverview from "layouts/rtl/components/OrdersOverview";
+import Projects from "layouts/rtl/components/Projects";
 
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setDirection } from "context";
+import { setDirection, useMaterialUIController } from "context";
 
 function RTL() {
   const [, dispatch] = useMaterialUIController();

@@ -1,5 +1,3 @@
- 
-
 import { useState } from "react";
 
 // prop-types is a library for typechecking of props
@@ -12,8 +10,8 @@ import Fade from "@mui/material/Fade";
 import MDBox from "components/MDBox";
 
 // Custom styles for the MDAlert
-import MDAlertRoot from "components/MDAlert/MDAlertRoot";
 import MDAlertCloseIcon from "components/MDAlert/MDAlertCloseIcon";
+import MDAlertRoot from "components/MDAlert/MDAlertRoot";
 
 function MDAlert({ color, dismissible, children, ...rest }) {
   const [alertStatus, setAlertStatus] = useState("mount");

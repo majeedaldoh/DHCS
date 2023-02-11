@@ -1,5 +1,3 @@
- 
-
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -34,6 +32,7 @@ function DefaultNavbarMobile({ open, close }) {
       <MDBox px={0.5}>
         <DefaultNavbarLink icon="donut_large" name="dashboard" route="/dashboard" />
         <DefaultNavbarLink icon="person" name="profile" route="/profile" />
+        <DefaultNavbarLink icon="" name="scan" route="/authentication/sign-up" />
         <DefaultNavbarLink icon="key" name="sign in" route="/authentication/sign-in" />
       </MDBox>
     </Menu>

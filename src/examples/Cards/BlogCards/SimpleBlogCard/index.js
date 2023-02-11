@@ -1,5 +1,3 @@
- 
-
 // react-router components
 import { Link } from "react-router-dom";
 
@@ -12,8 +10,8 @@ import MuiLink from "@mui/material/Link";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
+import MDTypography from "components/MDTypography";
 
 function SimpleBlogCard({ image, title, description, action }) {
   return (

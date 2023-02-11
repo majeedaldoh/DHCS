@@ -1,6 +1,4 @@
- 
-
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 // porp-types is a library for typechecking of props
 import PropTypes from "prop-types";
