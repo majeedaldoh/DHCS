@@ -1,14 +1,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
-<<<<<<< HEAD
 
-=======
->>>>>>> main
 // Material Dashboard 2 React components
-import MDAvatar from "components/MDAvatar";
-import MDBadge from "components/MDBadge";
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
+import MDAvatar from "components/MDAvatar";
+import MDBadge from "components/MDBadge";
 
 // Images
 import team2 from "assets/images/team-2.jpg";
@@ -39,16 +36,16 @@ export default function data() {
 
   return {
     columns: [
-      { Header: "Certificate", accessor: "author", width: "45%", align: "left" },
-      { Header: "Issure", accessor: "function", align: "left" },
+      { Header: "Country", accessor: "author", width: "45%", align: "left" },
+      { Header: "Issures", accessor: "function", align: "left" },
       // { Header: "status", accessor: "status", align: "center" },
-      { Header: "Date issued", accessor: "employed", align: "center" },
+      { Header: "Date created", accessor: "employed", align: "center" },
       { Header: "action", accessor: "action", align: "center" },
     ],
 
     rows: [
       {
-        author: <Author image={team2} name="COVID-19" />,
+        author: <Author image={team2} name="Saudi Arabia" />,
         function: <Job title="Abha health center" />,
         status: (
           <MDBox ml={-1}>

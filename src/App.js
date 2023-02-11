@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import { useState, useEffect, useMemo } from "react";
+=======
 import { useEffect, useMemo, useState } from "react";
+>>>>>>> main
 
 // react-router components
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
@@ -152,7 +156,7 @@ export default function App() {
         {layout === "vr" && <Configurator />}
         <Routes>
           {getRoutes(routes)}
-          <Route path="*" element={<Navigate to="/dashboard" />} />
+          <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
         </Routes>
       </ThemeProvider>
     </CacheProvider>
@@ -176,7 +180,7 @@ export default function App() {
       {layout === "vr" && <Configurator />}
       <Routes>
         {getRoutes(routes)}
-        <Route path="*" element={<Navigate to="/dashboard" />} />
+        <Route path="*" element={<Navigate to="/authentication/sign-in" />} />
       </Routes>
     </ThemeProvider>
   );

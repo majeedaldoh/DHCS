@@ -25,10 +25,13 @@ import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import Billing from "layouts/billing";
 import Dashboard from "layouts/dashboard";
+import Tables from "layouts/tables";
+import Billing from "layouts/billing";
+import RTL from "layouts/rtl";
 import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
-import RTL from "layouts/rtl";
-import Tables from "layouts/tables";
+import SignIn from "layouts/authentication/sign-in";
+import SignUp from "layouts/authentication/sign-up";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
@@ -40,23 +43,62 @@ const routes = [
     key: "dashboard",
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
+    isAllowed: 1,
     component: <Dashboard />,
   },
   {
     type: "collapse",
-    name: "Tables",
+    name: "Manage Countries",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
     route: "/tables",
+    isAllowed: 1,
     component: <Tables />,
   },
   {
     type: "collapse",
-    name: "Billing",
+    name: "Create Country",
+    key: "createCountry",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/create-country",
+    isAllowed: 1,
+    component: <CreateCountry />,
+  },
+  {
+    type: "collapse",
+    name: "Manage Agencies",
     key: "billing",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/billing",
-    component: <Billing />,
+    route: "/Agencies",
+    isAllowed: 1,
+    component: <Agencies />,
+  },
+  {
+    type: "collapse",
+    name: "Create Agency",
+    key: "createCountry",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/create-agency",
+    isAllowed: 1,
+    component: <CreateAgency />,
+  },
+  {
+    type: "collapse",
+    name: "Manage Issuers",
+    key: "billing",
+    icon: <Icon fontSize="small">receipt_long</Icon>,
+    route: "/Issuers",
+    isAllowed: 1,
+    component: <Issuers />,
+  },
+  {
+    type: "collapse",
+    name: "Create Issuer",
+    key: "createCountry",
+    icon: <Icon fontSize="small">dashboard</Icon>,
+    route: "/create-Issuer",
+    isAllowed: 1,
+    component: <CreateAgency />,
   },
   {
     type: "collapse",
@@ -64,6 +106,7 @@ const routes = [
     key: "rtl",
     icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
     route: "/rtl",
+    isAllowed: 1,
     component: <RTL />,
   },
   {
@@ -72,6 +115,7 @@ const routes = [
     key: "notifications",
     icon: <Icon fontSize="small">notifications</Icon>,
     route: "/notifications",
+    isAllowed: 1,
     component: <Notifications />,
   },
   {
@@ -80,6 +124,7 @@ const routes = [
     key: "profile",
     icon: <Icon fontSize="small">person</Icon>,
     route: "/profile",
+    isAllowed: 1,
     component: <Profile />,
   },
   {
@@ -88,15 +133,8 @@ const routes = [
     key: "sign-in",
     icon: <Icon fontSize="small">login</Icon>,
     route: "/authentication/sign-in",
+    isAllowed: 1,
     component: <SignIn />,
-  },
-  {
-    type: "collapse",
-    name: "Sign Up",
-    key: "sign-up",
-    icon: <Icon fontSize="small">assignment</Icon>,
-    route: "/authentication/sign-up",
-    component: <SignUp />,
   },
 ];
 

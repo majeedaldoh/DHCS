@@ -3,11 +3,11 @@ import Card from "@mui/material/Card";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
-import MDButton from "components/MDButton";
 import MDTypography from "components/MDTypography";
+import MDButton from "components/MDButton";
 
 // Billing page components
-import Invoice from "layouts/billing/components/Invoice";
+import Invoice from "layouts/issuers/components/Invoice";
 
 function Invoices() {
   return (
