@@ -26,6 +26,7 @@ import CreateAgency from "layouts/authentication/CreateAgency";
 import CreateCertificates from "layouts/authentication/CreateCertificates";
 import CreateCountry from "layouts/authentication/CreateCountry";
 import SignIn from "layouts/authentication/sign-in";
+import SignUp from "layouts/authentication/sign-up";
 import Certificates from "layouts/certificates";
 
 import Dashboard from "layouts/dashboard";
@@ -155,6 +156,14 @@ const routes = [
     route: "/authentication/sign-in",
     isAllowed: 1,
     component: <SignIn />,
+  },
+  {
+    type: "collapse",
+    name: "Scan",
+    key: "sign-up",
+    icon: <Icon fontSize="small">assignment</Icon>,
+    route: "/authentication/sign-up",
+    component: <SignUp />,
   },
 ];
 
