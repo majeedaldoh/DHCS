@@ -35,12 +35,12 @@ import {
   useMaterialUIController,
 } from "context";
 // eslint-disable-next-line camelcase
-import Deapp_abi from "../../layouts/authentication/sign-in";
+import Deapp_abi from "../../layouts/authentication/sign-in/abi.json";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
-  const contractAddress = "0x453cAC3F1BD0165BC67ab39c8561755E7B9335D9";
+  const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -74,12 +74,9 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [StudentInfo, getStudentInfo] = useState(null);
 
   const getAllStudentInfo = async () => {
-    const val = await contract.addCountry(
-      "Saudi Arabia",
-      "0x2327ec996451DD12AA7d4F06a589566a593ea994"
-    );
+    const val = await contract.getCountryByAddress("0x5b29B50D5DcfB6499aCe99f43B20a166aba25640");
     console.log(val);
-    alert(val.hash);
+    alert(val);
     getStudentInfo(val.hash);
   };
 
@@ -104,8 +101,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
     localStorage.setItem("sessionExpires", sessionExpires);
     console.log("saad here");
     updateEthers();
-    // setWalletAddress(dispatch, newAccount);
-    // setContractFunctions(dispatch, contract.functions);
   };
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode, sidenavColor } = controller;
   const location = useLocation();

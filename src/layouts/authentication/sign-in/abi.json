@@ -1,8 +1,7 @@
 [{
         "inputs": [],
         "stateMutability": "nonpayable",
-        "type": "constructor",
-        "signature": "constructor"
+        "type": "constructor"
     },
     {
         "anonymous": false,
@@ -13,8 +12,7 @@
             "type": "address"
         }],
         "name": "AgencyAdded",
-        "type": "event",
-        "signature": "0x242a7a415f004cc5c6ee345efdcd3d6bf7bbd6b59430d36d8e36bf0a1ba21051"
+        "type": "event"
     },
     {
         "anonymous": false,
@@ -25,8 +23,7 @@
             "type": "address"
         }],
         "name": "AgencyRemoved",
-        "type": "event",
-        "signature": "0x20996aecec8811f0bb6aaeba72643b18a78e6d569cbae107b2e151afc07cc05b"
+        "type": "event"
     },
     {
         "anonymous": false,
@@ -37,8 +34,7 @@
             "type": "address"
         }],
         "name": "CountryAdded",
-        "type": "event",
-        "signature": "0xa9a303826cd9a260a478b261b01c7847e8b32351f4ba3cbda6b770ab52bce77d"
+        "type": "event"
     },
     {
         "anonymous": false,
@@ -49,8 +45,7 @@
             "type": "address"
         }],
         "name": "CountryRemoved",
-        "type": "event",
-        "signature": "0x9fb15b8397d2d8a5170d0c3919e2910c484b091b815334b9b584d76c6448f05b"
+        "type": "event"
     },
     {
         "anonymous": false,
@@ -68,8 +63,7 @@
             }
         ],
         "name": "SuperAdminChanged",
-        "type": "event",
-        "signature": "0x6a7fb6694616d75391385b86c21a1cc2628072753f9c7da9731e7b1b083a55e4"
+        "type": "event"
     },
     {
         "inputs": [{
@@ -106,8 +100,7 @@
         "name": "IssueCertificates",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0xdbd12dbc"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -122,9 +115,7 @@
             "type": "address"
         }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x306e22b0"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -145,8 +136,7 @@
             "type": "bool"
         }],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0x0200a88a"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -167,8 +157,7 @@
             "type": "bool"
         }],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0xdb532651"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -195,8 +184,7 @@
         "name": "addIssure",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0x9534cfa0"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -217,9 +205,7 @@
             }
         ],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x3b214e57"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -240,9 +226,7 @@
             }
         ],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0xd182704a"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -283,9 +267,7 @@
             }
         ],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x5070a9c7"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -321,9 +303,7 @@
             }
         ],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x7ed4cf16"
+        "type": "function"
     },
     {
         "inputs": [],
@@ -334,9 +314,7 @@
             "type": "uint256"
         }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x2986c0e5"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -351,8 +329,7 @@
             "type": "bool"
         }],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0x4778df3e"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -367,8 +344,7 @@
             "type": "bool"
         }],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0x2dac5903"
+        "type": "function"
     },
     {
         "inputs": [{
@@ -383,8 +359,7 @@
             "type": "bool"
         }],
         "stateMutability": "nonpayable",
-        "type": "function",
-        "signature": "0x15700052"
+        "type": "function"
     },
     {
         "inputs": [],
@@ -395,9 +370,7 @@
             "type": "address"
         }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x29575f6a"
+        "type": "function"
     },
     {
         "inputs": [],
@@ -408,8 +381,6 @@
             "type": "uint256"
         }],
         "stateMutability": "view",
-        "type": "function",
-        "constant": true,
-        "signature": "0x5a075e95"
+        "type": "function"
     }
 ]

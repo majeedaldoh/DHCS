@@ -470,11 +470,11 @@
 	},
 	"sources": {
 		"contracts/DHCs.sol": {
-			"keccak256": "0x02189a23d0bde091ce1cd29455b14c44b8fc268fe594b6a19b624dcd0a5f8404",
+			"keccak256": "0xd218246696c8c7141bb83cb0b85fbfc8f1bc1325102fa9ff3e940b3c463e579e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://a3d8b1e4f44593f0086d13cd281cfcc81a8ea5fe2799381cbc42b47457bae3bf",
-				"dweb:/ipfs/QmTM9wUh8oJwf27JFKroigtmAUUxX3wHYmLj1g5e2o3xhf"
+				"bzz-raw://b8234c89ad92bd4d9288c4b74876f2eb5235c9321eae33db20bea06249ba0b38",
+				"dweb:/ipfs/QmXEdtxH3NwKe1TL3req779xgRWsUGLrFsDRTRfJj92itK"
 			]
 		}
 	},

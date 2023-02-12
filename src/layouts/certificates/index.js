@@ -11,7 +11,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 // Billing page components
 
-import AgenciesInformation from "layouts/agencies/components/AgenciesInformation";
+import CertificateInformation from "layouts/certificates/components/CertificatesInformation";
 
 function Billing() {
   return (
@@ -21,7 +21,7 @@ function Billing() {
         <MDBox mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} md={12}>
-              <AgenciesInformation />
+              <CertificateInformation />
             </Grid>
           </Grid>
         </MDBox>

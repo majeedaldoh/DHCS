@@ -23,6 +23,7 @@
 // Material Dashboard 2 React layouts
 import Agencies from "layouts/agencies";
 import CreateAgency from "layouts/authentication/CreateAgency";
+import CreateIssuer from "layouts/authentication/CreateIssuer";
 import CreateCertificates from "layouts/authentication/CreateCertificates";
 import CreateCountry from "layouts/authentication/CreateCountry";
 import SignIn from "layouts/authentication/sign-in";
@@ -101,14 +102,14 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/create-Issuer",
     isAllowed: 1,
-    component: <CreateAgency />,
+    component: <CreateIssuer />,
   },
   {
     type: "collapse",
     name: "Manage Certificates",
     key: "billing",
     icon: <Icon fontSize="small">receipt_long</Icon>,
-    route: "/Issuers",
+    route: "/Certificates",
     isAllowed: 1,
     component: <Certificates />,
   },
@@ -117,7 +118,7 @@ const routes = [
     name: "Create Certificate",
     key: "createCountry",
     icon: <Icon fontSize="small">dashboard</Icon>,
-    route: "/create-Issuer",
+    route: "/create-Certificate",
     isAllowed: 1,
     component: <CreateCertificates />,
   },

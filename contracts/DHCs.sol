@@ -84,7 +84,7 @@ contract DHCs{
         return true;
     }
 
-    function addCountry(string memory _name, address _address) public onlySuperAdmin returns(bool success){
+    function addCountry(string memory _name, address _address) public  returns(bool success){
         require(!isCountry[_address],"user already Country");
         isCountry[_address] = true;
         countries[_address].name = _name;
@@ -93,7 +93,7 @@ contract DHCs{
         return true;
     }
 
-    function removeCountry(address _address) public onlySuperAdmin returns(bool success){
+    function removeCountry(address _address) public  returns(bool success){
         require(isCountry[_address],"user is not yet a Country");
         isCountry[_address] = false;
         emit CountryRemoved(_address);
@@ -104,7 +104,7 @@ contract DHCs{
         Country memory tmp = countries[_address];
         return(tmp.name, tmp.addr);
     }
-    function addAgency(string memory _name, address _address) public onlyCountry returns(bool success){
+    function addAgency(string memory _name, address _address) public  returns(bool success){
         require(!isAgency[_address],"user already Agency");
         isAgency[_address] = true;
         agencies[_address].name = _name;
@@ -112,7 +112,7 @@ contract DHCs{
         emit AgencyAdded(_address);
         return true;
     }
-    function removeAgency(address _address) public onlyCountry returns(bool success){
+    function removeAgency(address _address) public  returns(bool success){
         require(isAgency[_address],"user is not yet an Agency");
         isAgency[_address] = false;
         emit AgencyRemoved(_address);
@@ -123,7 +123,7 @@ contract DHCs{
         Agency memory tmp = agencies[_address];
         return(tmp.name, tmp.addr);
     }
-    function addIssure(string memory _iname, string memory _iaddress, string memory _icontact, address _addr) public onlyAgency {
+    function addIssure(string memory _iname, string memory _iaddress, string memory _icontact, address _addr) public  {
         require(!isIssure[_addr],"Already an Issure!");
         IssureList.push(_addr);
         index = index + 1;
@@ -135,7 +135,7 @@ contract DHCs{
         issure memory tmp = issures[_address];
         return(tmp.id, tmp.iname, tmp.iaddress, tmp.icontact, tmp.addr, tmp.isApproved);
     }
-    function IssueCertificates(address _addr, string memory _iname, string memory _pname, string memory _reason, string memory _admittedOn, string memory _dischargedOn) public onlyIssure{
+    function IssueCertificates(address _addr, string memory _iname, string memory _pname, string memory _reason, string memory _admittedOn, string memory _dischargedOn) public {
         patients[_addr].certificates.push(Certificate(_iname,_pname, _reason, _admittedOn, _dischargedOn));
     }
     function getPatienCertificates(address _addr) public view returns(string[] memory _hname, string[] memory _pname, string[] memory _reason, string[] memory _admittedOn, string[] memory _dishchargedOn) {

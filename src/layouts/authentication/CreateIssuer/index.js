@@ -1,7 +1,11 @@
+/* eslint-disable import/no-useless-path-segments */
+// react-router-dom components
+// @mui material components
+import Card from "@mui/material/Card";
+import Footer from "examples/Footer";
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 // @mui material components
-import Card from "@mui/material/Card";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -13,10 +17,15 @@ import React, { useState } from "react";
 import Bill from "layouts/certificates/components/Bill";
 import { useMaterialUIController, setWalletAddress, setContractFunctions } from "context";
 import MDButton from "components/MDButton";
-// eslint-disable-next-line camelcase
-import Deapp_abi from "../../../authentication/sign-in/abi.json";
 
-function certificatesInformation() {
+// Material Dashboard 2 React components
+import MDInput from "components/MDInput";
+import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+// eslint-disable-next-line camelcase
+import Deapp_abi from "../../../layouts/authentication/sign-in/abi.json";
+
+function Cover() {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
   const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
@@ -59,9 +68,11 @@ function certificatesInformation() {
     getStudentInfo(val.hash);
   };
 
-  const log = () => {
-    console.log(window.ethereum);
-    console.log(contract.functions);
+  const addToBlockchain = (event) => {
+    //  a lot to fill
+    alert("Saad do the rest of the data");
+    contract.addIssure("Saudi Arabia", "0x989150C2F70613b487Fbc14253a2f2B68003019D");
+    console.log(event.target.name.value); // for debugging
   };
   const updateEthers = () => {
     const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -84,41 +95,70 @@ function certificatesInformation() {
     setContractFunctions(dispatch, contract.functions);
   };
   return (
-    <Card id="delete-account">
-      <MDBox pt={3} px={2}>
-        <MDTypography variant="h6" fontWeight="medium">
-          Certificates
-          {walletAddress == null ? (
-            <MDButton onClick={connectWalletHandler} variant="gradient" color="info" fullWidth>
-              {connButtonText}
-              {errorMessage}
-              <h3> Address: {defaultAccount} </h3>
-            </MDButton>
-          ) : (
-            <div>
-              <h3> Address: {walletAddress} </h3>
-              <MDButton onClick={clearStorage} variant="gradient" color="info" fullWidth>
-                <h3> Sign out </h3>
-              </MDButton>
-              <MDButton onClick={getAllStudentInfo} variant="gradient" color="info" fullWidth>
-                <h3> getAll </h3>
-              </MDButton>
-            </div>
-          )}
-        </MDTypography>
-      </MDBox>
-      <MDBox pt={1} pb={2} px={2}>
-        <MDBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
-          <Bill
-            name={StudentInfo}
-            company="viking burrito"
-            email="oliver@burrito.com"
-            vat="FRB1235476"
-          />
+    <DashboardLayout>
+      <DashboardNavbar />
+      <MDBox mt={8}>
+        <MDBox mb={3}>
+          <Card>
+            <MDBox
+              variant="gradient"
+              bgColor="info"
+              borderRadius="lg"
+              coloredShadow="success"
+              mx={2}
+              mt={-3}
+              p={3}
+              mb={1}
+              textAlign="center"
+            >
+              <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
+                Add Issuer
+                {walletAddress == null ? (
+                  <MDButton
+                    onClick={connectWalletHandler}
+                    variant="gradient"
+                    color="info"
+                    fullWidth
+                  >
+                    {connButtonText}
+                    {errorMessage}
+                    <h3> Address: {defaultAccount} </h3>
+                  </MDButton>
+                ) : (
+                  <div>
+                    <h3> Address: {walletAddress} </h3>
+                    <MDButton onClick={clearStorage} variant="gradient" color="info" fullWidth>
+                      <h3> Sign out </h3>
+                    </MDButton>
+                    <MDButton onClick={getAllStudentInfo} variant="gradient" color="info" fullWidth>
+                      <h3> getAll </h3>
+                    </MDButton>
+                  </div>
+                )}
+              </MDTypography>
+            </MDBox>
+            <MDBox pt={4} pb={3} px={3}>
+              <MDBox component="form" role="form">
+                <MDBox mb={2}>
+                  <input placeholder="Name" type="text" name="name" id="" />
+                </MDBox>
+                <MDBox mb={2}>
+                  <input placeholder="Address" type="text" name="addr" id="" />
+                </MDBox>
+
+                <MDBox mt={4} mb={1}>
+                  <MDButton onClick={addToBlockchain} variant="gradient" color="info" fullWidth>
+                    Add Country
+                  </MDButton>
+                </MDBox>
+              </MDBox>
+            </MDBox>
+          </Card>
         </MDBox>
       </MDBox>
-    </Card>
+      <Footer />
+    </DashboardLayout>
   );
 }
 
-export default certificatesInformation;
+export default Cover;
