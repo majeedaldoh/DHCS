@@ -27,7 +27,7 @@ function Dashboard() {
                 color="dark"
                 icon="leaderboard"
                 title="Countries"
-                count={281}
+                count={1}
                 percentage={{
                   color: "success",
                   amount: "",
@@ -41,7 +41,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 icon="leaderboard"
                 title="Agencies"
-                count="2,300"
+                count="6"
                 percentage={{
                   color: "success",
                   amount: "+31%",
@@ -56,7 +56,7 @@ function Dashboard() {
                 color="success"
                 icon="leaderboard"
                 title="Issuers"
-                count="34k"
+                count="9"
                 percentage={{
                   color: "success",
                   amount: "+14%",
@@ -71,7 +71,7 @@ function Dashboard() {
                 color="primary"
                 icon="leaderboard"
                 title="Certificates"
-                count="+91"
+                count="+20"
                 percentage={{
                   color: "success",
                   amount: "",

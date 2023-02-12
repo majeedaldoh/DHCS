@@ -67,7 +67,7 @@ function Tables() {
                       done
                     </Icon>
                     <MDTypography variant="button" fontWeight="regular" color="text">
-                      &nbsp;<strong>30 Added</strong> this month
+                      &nbsp;<strong>1 Added</strong> this month
                     </MDTypography>
                   </MDBox>
                 </MDBox>

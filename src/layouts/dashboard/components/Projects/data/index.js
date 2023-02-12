@@ -32,7 +32,7 @@ export default function data() {
         companies: <Company image={logoXD} name="Saudi Arabia" />,
         members: (
           <MDBox display="flex" py={1}>
-            500
+            3
           </MDBox>
         ),
         budget: (
@@ -42,7 +42,7 @@ export default function data() {
         ),
         completion: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            1300
+            18
           </MDTypography>
         ),
       },
