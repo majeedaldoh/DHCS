@@ -79,7 +79,7 @@ export default function data() {
         ),
         ميزانية: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            
           </MDTypography>
         ),
         إكمال: (

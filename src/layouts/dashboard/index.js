@@ -25,7 +25,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="dark"
-                icon="weekend"
+                icon="leaderboard"
                 title="Countries"
                 count={281}
                 percentage={{
@@ -54,7 +54,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="success"
-                icon="store"
+                icon="leaderboard"
                 title="Issuers"
                 count="34k"
                 percentage={{
@@ -69,7 +69,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 color="primary"
-                icon="person_add"
+                icon="leaderboard"
                 title="Certificates"
                 count="+91"
                 percentage={{

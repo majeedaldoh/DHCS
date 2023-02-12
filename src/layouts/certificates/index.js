@@ -11,7 +11,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 
 // Billing page components
 
-import CertificateInformation from "layouts/certificates/components/CertificatesInformation";
+import CertificateInformation from "layouts/certificates/components/certificatesInformation";
 
 function Billing() {
   return (

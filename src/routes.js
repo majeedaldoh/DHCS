@@ -29,12 +29,9 @@ import CreateCountry from "layouts/authentication/CreateCountry";
 import SignIn from "layouts/authentication/sign-in";
 import SignUp from "layouts/authentication/sign-up";
 import Certificates from "layouts/certificates";
-
 import Dashboard from "layouts/dashboard";
 import Issuers from "layouts/issuers";
-import Notifications from "layouts/notifications";
-import Profile from "layouts/profile";
-import RTL from "layouts/rtl";
+// import Profile from "layouts/profile";
 import Tables from "layouts/tables";
 
 // @mui icons
@@ -122,33 +119,15 @@ const routes = [
     isAllowed: 1,
     component: <CreateCertificates />,
   },
-  {
-    type: "collapse",
-    name: "RTL",
-    key: "rtl",
-    icon: <Icon fontSize="small">format_textdirection_r_to_l</Icon>,
-    route: "/rtl",
-    isAllowed: 1,
-    component: <RTL />,
-  },
-  {
-    type: "collapse",
-    name: "Notifications",
-    key: "notifications",
-    icon: <Icon fontSize="small">notifications</Icon>,
-    route: "/notifications",
-    isAllowed: 1,
-    component: <Notifications />,
-  },
-  {
-    type: "collapse",
-    name: "Profile",
-    key: "profile",
-    icon: <Icon fontSize="small">person</Icon>,
-    route: "/profile",
-    isAllowed: 1,
-    component: <Profile />,
-  },
+  // {
+  //   type: "collapse",
+  //   name: "Profile",
+  //   key: "profile",
+  //   icon: <Icon fontSize="small">person</Icon>,
+  //   route: "/profile",
+  //   isAllowed: 1,
+  //   component: <Profile />,
+  // },
   {
     type: "collapse",
     name: "Sign In",

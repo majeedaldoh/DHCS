@@ -109,7 +109,7 @@ export default function data() {
         project: <Project image={logoSpotify} name="Spotify" />,
         budget: (
           <MDTypography component="a" href="#" variant="button" color="text" fontWeight="medium">
-            $14,000
+            $
           </MDTypography>
         ),
         status: (

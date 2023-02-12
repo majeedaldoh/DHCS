@@ -7,7 +7,7 @@ import MDTypography from "components/MDTypography";
 import MDAvatar from "components/MDAvatar";
 
 // Images
-import logoXD from "assets/images/small-logos/logo-xd.svg";
+import logoXD from "assets/images/small-logos/saudi-arabia.png";
 
 export default function data() {
   const Company = ({ image, name }) => (
@@ -29,7 +29,7 @@ export default function data() {
 
     rows: [
       {
-        companies: <Company image={logoXD} name="Material UI XD Version" />,
+        companies: <Company image={logoXD} name="Saudi Arabia" />,
         members: (
           <MDBox display="flex" py={1}>
             500
@@ -37,12 +37,12 @@ export default function data() {
         ),
         budget: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            5
           </MDTypography>
         ),
         completion: (
           <MDTypography variant="caption" color="text" fontWeight="medium">
-            $14,000
+            1300
           </MDTypography>
         ),
       },

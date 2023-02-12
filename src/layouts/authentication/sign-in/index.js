@@ -14,7 +14,8 @@ import { ethers } from "ethers";
 import React, { useState } from "react";
 
 // Images
-import bgImage from "assets/images/bg-sign-in-basic.jpeg";
+// eslint-disable-next-line import/no-unresolved
+import bgImage from "assets/images/sign-in-bg.svg";
 // eslint-disable-next-line camelcase
 import { useMaterialUIController, setWalletAddress, setContractFunctions } from "context";
 // eslint-disable-next-line camelcase
@@ -102,8 +103,8 @@ function Basic() {
       {walletAddress == null ? (
         <Card>
           <MDBox
-            variant="gradient"
-            bgColor="info"
+            variant="#59D2BE"
+            bgColor="#59D2BE"
             borderRadius="lg"
             coloredShadow="info"
             mx={2}
