@@ -82,12 +82,64 @@
 				"type": "event"
 			},
 			{
+				"inputs": [],
+				"name": "CertificateCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_addr",
+						"name": "",
 						"type": "address"
+					}
+				],
+				"name": "Certificates",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "iname",
+						"type": "string"
 					},
+					{
+						"internalType": "string",
+						"name": "pname",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "reason",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "admittedOn",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "dischargedOn",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "string",
 						"name": "_iname",
@@ -110,32 +162,18 @@
 					},
 					{
 						"internalType": "string",
-						"name": "_dischargedOn",
+						"name": "_dishchargedOn",
 						"type": "string"
-					}
-				],
-				"name": "IssueCertificates",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "IssureList",
-				"outputs": [
+					},
 					{
 						"internalType": "address",
-						"name": "",
+						"name": "addr",
 						"type": "address"
 					}
 				],
-				"stateMutability": "view",
+				"name": "IssueCertificate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -233,6 +271,51 @@
 						"internalType": "address",
 						"name": "_addr",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllCertificates",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "iname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "pname",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "reason",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "admittedOn",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "dischargedOn",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "addr",
+								"type": "address"
+							}
+						],
+						"internalType": "struct DHCs.Certificate[]",
+						"name": "",
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -455,7 +538,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/DHCs.sol": "DHCs"
+			"contracts/DHCsFinal.sol": "DHCs"
 		},
 		"evmVersion": "berlin",
 		"libraries": {},
@@ -469,12 +552,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/DHCs.sol": {
-			"keccak256": "0xd218246696c8c7141bb83cb0b85fbfc8f1bc1325102fa9ff3e940b3c463e579e",
+		"contracts/DHCsFinal.sol": {
+			"keccak256": "0x8128243ce580b758a00f9aaf9fd8bb51c859aa6c54138abc6a0c5755450a5532",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b8234c89ad92bd4d9288c4b74876f2eb5235c9321eae33db20bea06249ba0b38",
-				"dweb:/ipfs/QmXEdtxH3NwKe1TL3req779xgRWsUGLrFsDRTRfJj92itK"
+				"bzz-raw://6140d4db53a1261e863d31090cd8d626825a4197d838c4af691fdac7e0096660",
+				"dweb:/ipfs/QmUNaurjwEMUGivBdf6JpDht4TaaNZq3ikDHmpv2RQ7wBD"
 			]
 		}
 	},

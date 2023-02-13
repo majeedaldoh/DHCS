@@ -28,7 +28,7 @@ import Deapp_abi from "../../../layouts/authentication/sign-in/abi.json";
 function Cover() {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
-  const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
+  const contractAddress = "0x8DdA61cD8E13D54a83F06DeECeCc923F167c5442";
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -62,24 +62,23 @@ function Cover() {
   const [StudentInfo, getStudentInfo] = useState(null);
 
   const getAllStudentInfo = async () => {
-    const val = await contract.getPatienCertificates("0xff062CaeC5db00963A5f00F67f802644be7b886B");
+    const val = await contract.getAllCertificates();
+
     console.log(val);
     alert(val);
     getStudentInfo(val.hash);
   };
 
-  const addToBlockchain = (event) => {
-    // this for setting the student name on the smart contract
-    event.preventDefault();
-    contract.IssueCertificates(
-      "0xff062CaeC5db00963A5f00F67f802644be7b886B",
-      "event.target.Iname.value",
-      "event.target.Pname.value",
-      "event.target.Reason.value",
-      "event.target.AdmOn.value",
-      "event.target.DisOn.value"
-    );
-    console.log(event.target.message.value); // for debugging
+  const addToBlockchain = async (event) => {
+    const inputVal = document.getElementsByClassName("inputClass")[0].value;
+    const inputVal2 = document.getElementsByClassName("inputClass2")[0].value;
+    const inputVal3 = document.getElementsByClassName("inputClass3")[0].value;
+    const inputVal4 = document.getElementsByClassName("inputClass4")[0].value;
+    const inputVal5 = document.getElementsByClassName("inputClass5")[0].value;
+    const inputVal6 = document.getElementsByClassName("inputClass6")[0].value;
+    contract.IssueCertificate(inputVal, inputVal2, inputVal3, inputVal4, inputVal5, inputVal6);
+    const val = await contract.getPatienCertificates(inputVal);
+    alert(val);
   };
   const updateEthers = () => {
     const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -120,64 +119,87 @@ function Cover() {
             >
               <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
                 Add Certificate
+                {walletAddress == null ? (
+                  <MDButton
+                    onClick={connectWalletHandler}
+                    variant="gradient"
+                    color="info"
+                    fullWidth
+                  >
+                    {connButtonText}
+                    {errorMessage}
+                    <h3> Address: {defaultAccount} </h3>
+                  </MDButton>
+                ) : (
+                  <div>
+                    <h3> Address: {walletAddress} </h3>
+                    <MDButton onClick={clearStorage} variant="gradient" color="info" fullWidth>
+                      <h3> Sign out </h3>
+                    </MDButton>
+                    <MDButton onClick={getAllStudentInfo} variant="gradient" color="info" fullWidth>
+                      <h3> getAll </h3>
+                    </MDButton>
+                  </div>
+                )}
               </MDTypography>
-              {walletAddress == null ? (
-                <MDButton onClick={connectWalletHandler} variant="gradient" color="info" fullWidth>
-                  {connButtonText}
-                  {errorMessage}
-                  <h3> Address: {defaultAccount} </h3>
-                </MDButton>
-              ) : (
-                walletAddress
-              )}
-              {/* string[] memory Iname = new string[](patients[_addr].certificates.length);
-        string[] memory Pname = new string[](patients[_addr].certificates.length);
-        string[] memory Reason = new string[](patients[_addr].certificates.length);
-        string[] memory AdmOn = new string[](patients[_addr].certificates.length);
-        string[] memory DisOn = new string[](patients[_addr].certificates.length); */}
             </MDBox>
             <MDBox pt={4} pb={3} px={3}>
               <MDBox component="form" role="form">
                 <MDBox mb={2}>
-                  <MDInput
+                  <input
+                    placeholder="Address"
                     type="text"
-                    name="Iname"
-                    label="Issuer Name"
-                    variant="standard"
-                    fullWidth
+                    name="name"
+                    id="name"
+                    className="inputClass"
                   />
                 </MDBox>
                 <MDBox mb={2}>
-                  <MDInput
+                  <input
+                    placeholder="Pname"
                     type="text"
-                    name="Pname"
-                    label="Paitent Name"
-                    variant="standard"
-                    fullWidth
+                    name="addr"
+                    id="addr"
+                    className="inputClass2"
                   />
                 </MDBox>
                 <MDBox mb={2}>
-                  <MDInput type="text" name="Reason" label="Reason" variant="standard" fullWidth />
-                </MDBox>
-                <MDBox mb={2}>
-                  <MDInput
+                  <input
+                    placeholder="Iname"
                     type="text"
-                    name="AdmOn"
-                    label="Addminted On"
-                    variant="standard"
-                    fullWidth
+                    name="addr"
+                    id="addr"
+                    className="inputClass3"
                   />
                 </MDBox>
                 <MDBox mb={2}>
-                  <MDInput
+                  <input
+                    placeholder="Reason"
                     type="text"
-                    name="DisOn"
-                    label="Discharged"
-                    variant="standard"
-                    fullWidth
+                    name="addr"
+                    id="addr"
+                    className="inputClass4"
                   />
                 </MDBox>
 
+                <MDBox mb={2}>
+                  <input
+                    placeholder="addom"
+                    type="date"
+                    name="addr"
+                    id="addr"
+                    className="inputClass5"
+                  />
+                </MDBox>
+                <MDBox mb={2}>
+                  <input
+                    placeholder="disson"
+                    type="date"
+                    name="addr"
+                    id="addr"
+                    className="inputClass6"
+                  />
+                </MDBox>
                 <MDBox mt={4} mb={1}>
                   <MDButton onClick={addToBlockchain} variant="gradient" color="info" fullWidth>
                     Add Certificate

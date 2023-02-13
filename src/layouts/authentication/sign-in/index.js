@@ -24,7 +24,7 @@ import Deapp_abi from "./abi.json";
 function Basic() {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
-  const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
+  const contractAddress = "0x8DdA61cD8E13D54a83F06DeECeCc923F167c5442";
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -167,7 +167,7 @@ function Basic() {
             <MDBox component="form" role="form">
               <MDBox mt={4} mb={1}>
                 <div>
-                  <h3> StudentInfo : {StudentInfo}</h3>
+                  <h3> Certificates Info : {StudentInfo}</h3>
                   <MDButton onClick={clearStorage} variant="gradient" color="info" fullWidth>
                     <h3> Sign out </h3>
                   </MDButton>

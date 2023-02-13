@@ -40,7 +40,7 @@ import Deapp_abi from "../../layouts/authentication/sign-in/abi.json";
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
-  const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
+  const contractAddress = "0x8DdA61cD8E13D54a83F06DeECeCc923F167c5442";
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);

@@ -66,12 +66,59 @@
         "type": "event"
     },
     {
+        "inputs": [],
+        "name": "CertificateCount",
+        "outputs": [{
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+        }],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
         "inputs": [{
-                "internalType": "address",
-                "name": "_addr",
-                "type": "address"
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+        }],
+        "name": "Certificates",
+        "outputs": [{
+                "internalType": "string",
+                "name": "iname",
+                "type": "string"
             },
             {
+                "internalType": "string",
+                "name": "pname",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "reason",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "admittedOn",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "dischargedOn",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "addr",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [{
                 "internalType": "string",
                 "name": "_iname",
                 "type": "string"
@@ -93,28 +140,18 @@
             },
             {
                 "internalType": "string",
-                "name": "_dischargedOn",
+                "name": "_dishchargedOn",
                 "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "addr",
+                "type": "address"
             }
         ],
-        "name": "IssueCertificates",
+        "name": "IssueCertificate",
         "outputs": [],
         "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [{
-            "internalType": "uint256",
-            "name": "",
-            "type": "uint256"
-        }],
-        "name": "IssureList",
-        "outputs": [{
-            "internalType": "address",
-            "name": "",
-            "type": "address"
-        }],
-        "stateMutability": "view",
         "type": "function"
     },
     {
@@ -204,6 +241,48 @@
                 "type": "address"
             }
         ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getAllCertificates",
+        "outputs": [{
+            "components": [{
+                    "internalType": "string",
+                    "name": "iname",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "pname",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "reason",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "admittedOn",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "dischargedOn",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "addr",
+                    "type": "address"
+                }
+            ],
+            "internalType": "struct DHCs.Certificate[]",
+            "name": "",
+            "type": "tuple[]"
+        }],
         "stateMutability": "view",
         "type": "function"
     },

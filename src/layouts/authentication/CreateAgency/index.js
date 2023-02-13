@@ -28,7 +28,7 @@ import Deapp_abi from "../../../layouts/authentication/sign-in/abi.json";
 function Cover() {
   const [controller, dispatch] = useMaterialUIController();
   const { walletAddress } = controller;
-  const contractAddress = "0xe6440b7046fC27992BD9a1b5e3Db065fc8223027";
+  const contractAddress = "0x8DdA61cD8E13D54a83F06DeECeCc923F167c5442";
 
   const [errorMessage, setErrorMessage] = useState(null);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -62,17 +62,18 @@ function Cover() {
   const [StudentInfo, getStudentInfo] = useState(null);
 
   const getAllStudentInfo = async () => {
-    const val = await contract.getPatienCertificates("0xff062CaeC5db00963A5f00F67f802644be7b886B");
+    const val = await contract.getAgencyByAddress("0xff062CaeC5db00963A5f00F67f802644be7b886B");
     console.log(val);
     alert(val);
     getStudentInfo(val.hash);
   };
 
-  const addToBlockchain = (event) => {
-    //  a lot to fill
-    alert("Saad do the rest of the data");
-    contract.addAgency("Saudi Arabia", "0x989150C2F70613b487Fbc14253a2f2B68003019D");
-    console.log(event.target.name.value); // for debugging
+  const addToBlockchain = async (event) => {
+    const inputVal = document.getElementsByClassName("inputClass")[0].value;
+    const inputVal2 = document.getElementsByClassName("inputClass2")[0].value;
+    contract.addAgency(inputVal, inputVal2);
+    const val = await contract.getAgencyByAddress(inputVal2);
+    alert(val);
   };
   const updateEthers = () => {
     const tempProvider = new ethers.providers.Web3Provider(window.ethereum);
@@ -140,15 +141,27 @@ function Cover() {
             <MDBox pt={4} pb={3} px={3}>
               <MDBox component="form" role="form">
                 <MDBox mb={2}>
-                  <input placeholder="Name" type="text" name="name" id="" />
+                  <input
+                    placeholder="Name"
+                    type="text"
+                    name="name"
+                    id="name"
+                    className="inputClass"
+                  />
                 </MDBox>
                 <MDBox mb={2}>
-                  <input placeholder="Address" type="text" name="addr" id="" />
+                  <input
+                    placeholder="Address"
+                    type="text"
+                    name="addr"
+                    id="addr"
+                    className="inputClass2"
+                  />
                 </MDBox>
 
                 <MDBox mt={4} mb={1}>
                   <MDButton onClick={addToBlockchain} variant="gradient" color="info" fullWidth>
-                    Add Country
+                    Add Agency
                   </MDButton>
                 </MDBox>
               </MDBox>
